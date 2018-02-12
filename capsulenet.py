@@ -140,7 +140,7 @@ def train(model, data, args):
     # End: Training with data augmentation -----------------------------------------------------------------------#
     # serialize model to JSON
     model_json = model.to_json()
-    with open("model.json", "w") as json_file:
+    with open(args.save_dir + 'model.json', "w") as json_file:
           json_file.write(model_json)   
     model.save_weights(args.save_dir + '/trained_model.h5')
     print('Trained model saved to \'%s/trained_model.h5\'' % args.save_dir)
